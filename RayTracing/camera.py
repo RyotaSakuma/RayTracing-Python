@@ -20,7 +20,7 @@ class camera():
         self.u = vup.cross(self.w).unit_vec()
         self.v = self.w.cross(self.u)
 
-        self.lower_left_corner = self.origin - self.u * half_width - self.v * half_height - self.w * focus_dist
+        self.lower_left_corner = self.origin - (self.u * half_width + self.v * half_height + self.w) * focus_dist
         self.horizontal = self.u * (2.0 * half_width)
         self.vertical = self.v * (2.0 * half_height)
 
