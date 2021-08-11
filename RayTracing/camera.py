@@ -21,8 +21,8 @@ class camera():
         self.v = self.w.cross(self.u)
 
         self.lower_left_corner = self.origin - (self.u * half_width + self.v * half_height + self.w) * focus_dist
-        self.horizontal = self.u * (2.0 * half_width)
-        self.vertical = self.v * (2.0 * half_height)
+        self.horizontal = self.u * (2.0 * half_width * focus_dist)
+        self.vertical = self.v * (2.0 * half_height * focus_dist)
 
     def get_ray(self, s, t):
         rd = random_in_unit_disk() * self.lens_radius
